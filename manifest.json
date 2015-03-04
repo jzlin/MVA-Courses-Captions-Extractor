@@ -1,0 +1,43 @@
+{
+  "name": "MVA Courses Captions Extractor",
+  "version": "0.0.1",
+  "description": "Extract the captions of MVA Courses.",
+  "permissions": [
+    "http://www.microsoftvirtualacademy.com/*",
+    "http://channel9.msdn.com/*",
+    "tabs"
+  ],
+
+  "background": {
+    "scripts": [
+      "eventPage.js"
+    ],
+    "persistent": false
+  },
+
+  "page_action": {
+    "default_icon": "caption-256.png",
+    "default_title": "Extract Captions"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "http://channel9.msdn.com/*"
+      ],
+      "all_frames": true,
+      "js": [
+        "show_page_action_button.js"
+      ]
+    }
+  ],
+
+  "icons": {
+    "16": "caption.svg",
+    "48": "caption.svg",
+    "128": "caption.svg",
+    "256": "caption.svg"
+  },
+
+  "manifest_version": 2
+}
